@@ -6,13 +6,13 @@
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: '^127.0.1.1'
-    line: '127.0.1.1	{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}'
+    line: '127.0.1.1	{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}'  # noqa no-tabs
 
 - name: ensure correct but unaesthetic /etc/hosts entry (point hostname to ::1)
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: '^::1		{{ ansible_hostname }}'
-    line: '::1		{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}'
+    line: '::1		{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}'  # noqa no-tabs
 
 - name: remove raspberrypi entry
   ansible.builtin.lineinfile:
