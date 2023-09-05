@@ -1,4 +1,2 @@
 ---
-hosts_file_fqdn: "{{ inventory_hostname }}"
-hosts_file_hostname: "{{ inventory_hostname_short }}"
-hosts_file_ip_address: "{{ ansible_default_ipv4.address }}"
+# defaults file for hosts_file
