@@ -1,17 +1,17 @@
 ---
 # the reasoning for using 127.0.1.1 and not ansible_default_ipv4.address is, that if a host is
 # changing between lan/wifi or has a dynamic ip, hardcoding the ip would be bad!
-- name: Ensure correct but unaesthetic /etc/hosts entry (point hostname to 127.0.0.1)
+- name: Ensure correct but unaesthetic /etc/hosts entry (point hostname to 127.0.0.1) # noqa no-tabs
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: "^127.0.1.1"
-    line: "127.0.1.1	{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}" # noqa no-tabs
+    line: "127.0.1.1	{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}"
 
-- name: Ensure correct but unaesthetic /etc/hosts entry (point hostname to ::1)
+- name: Ensure correct but unaesthetic /etc/hosts entry (point hostname to ::1) # noqa no-tabs
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: "^::1		{{ ansible_hostname }}"
-    line: "::1		{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}" # noqa no-tabs
+    line: "::1		{{ ansible_hostname }}.{{ basic.local_domain }} {{ ansible_hostname }}"
 
 - name: Remove raspberrypi entry
   ansible.builtin.lineinfile:
