@@ -6,15 +6,21 @@
     path: /etc/hosts
     regexp: "^127.0.1.1"
     line: "127.0.1.1	{{ ansible_hostname }}.{{ hosts_file_local_domain }} {{ ansible_hostname }}"
+  become: true
+  become_user: root
 
 - name: Ensure correct but unaesthetic /etc/hosts entry (point hostname to ::1) # noqa no-tabs
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: "^::1		{{ ansible_hostname }}"
     line: "::1		{{ ansible_hostname }}.{{ hosts_file_local_domain }} {{ ansible_hostname }}"
+  become: true
+  become_user: root
 
 - name: Remove raspberrypi entry
   ansible.builtin.lineinfile:
     path: /etc/hosts
     regexp: "raspberrypi"
     line: ""
+  become: true
+  become_user: root
