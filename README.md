@@ -1,5 +1,6 @@
 hosts_file
 ==========
+[![Ansible Lint](https://github.com/oxivanisher/role-hosts_file/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/oxivanisher/role-hosts_file/actions/workflows/ansible-lint.yml)
 
 Configure localhost (ipv4 and ipv6) entries in `/etc/hosts` to: `ansible_hostname`.`hosts_file_local_domain`	`ansible_hostname`
 
